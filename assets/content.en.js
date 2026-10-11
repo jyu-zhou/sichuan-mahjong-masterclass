@@ -5,7 +5,7 @@ window.SCMJ_CONTENT = {
   "siteSubtitle": "Chuan Mahjong · From zero to evidence-based decision making",
   "projectUrl": "https://github.com/jyu-zhou/sichuan-mahjong-masterclass",
   "author": "jyu-zhou",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "lessons": [
     {
       "phase": "Getting Started",

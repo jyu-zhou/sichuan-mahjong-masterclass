@@ -1,6 +1,6 @@
 # 四川麻将大师学院
 
-[English](README.en.md) · [在线中文课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [英文课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [完整中文教材](docs/zh-CN/textbook.md) · [最新 Release](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
+[English](README.en.md) · [在线中文课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [英文课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [双语单文件离线版](standalone.html) · [完整中文教材](docs/zh-CN/textbook.md) · [Agent 教学指南](AGENT_GUIDE.md) · [最新 Release](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
 
 > 一套从零基础到高级决策的四川麻将（简称“川麻”）系统教材与离线互动课程。项目聚焦血战到底主线，用规则约束、牌效率、概率论、期望收益、逐家风险和科学复盘来解释“为什么这样打”，而不是堆砌无法验证的口诀。
 
@@ -21,33 +21,9 @@
 - **概率与收益计算器**：不放回抽样、番型倍数、花猪特殊罚款、攻守临界风险。
 - **连续读牌时间轴**：把确定事实、规则排除、概率线索和状态变化分层处理。
 - **完整双语教材**：中文默认，英文版本结构对应；网页和Markdown均可离线学习。
+- **双语单文件离线版**：[`standalone.html`](standalone.html)把中英文课程、教材、SVG牌面、脚本、样式和规则参考图全部嵌入一个HTML文件，可复制到任意设备直接离线运行。
 
 ## 快速开始
-
-### 先交给教学 Agent 的中文 Prompt
-
-把下面这段完整复制给你的 AAgent、ChatGPT、Claude 或其他教学 Agent，再按需补充自己的水平和时间。它会先做诊断，再安排循序渐进的四川麻将课程，而不是一次性倾倒规则。
-
-```text
-你现在是我的四川麻将（川麻）教练和课程规划 Agent。请把我从当前水平带到能够独立完成合法判断、牌效率分析、番型与结算、概率估计、逐家防守和科学复盘。
-
-教学基线：默认采用四人、万筒条108张、换三张、固定定缺、不吃、可碰杠、血战到底；以当前牌局/房间规则页为最高优先级。如果我的房间规则与基线不同，先列出差异和影响，再继续教学，不要把不同规则混在一起。
-
-请先只问我以下信息并等待回答：①是否完全新手；②每周可学习几次、每次几分钟；③正在使用的游戏/房间及规则差异；④希望偏实战、数学、记牌还是防守；⑤是否能提供牌局记录。收到回答后，输出一份 4—12 周的课程安排，每周包含目标、先修知识、练习、复盘任务和验收标准。
-
-之后每次只推进一个小课节，固定使用：
-1. 本节目标与前置知识；
-2. 简明讲解和一个具体牌例；
-3. 先让我作答的互动题（不要立刻公布答案）；
-4. 根据我的回答纠错，并明确区分“规则/牌张守恒可证明”“依赖假设的条件模型”“需要真实牌谱验证的经验判断”；
-5. 课后 10 分钟内可完成的练习、复盘问题和下一节入口。
-
-遇到牌局问题时，先检查定缺、动作合法性、手牌结构和公开牌，再谈牌效、听口、概率、逐家风险与期望收益；信息不足时列出缺失信息和合理分支，不要编造牌面或精确概率。不要承诺胜率、盈利或“必胜打法”，也不要用事后摸到的牌评价当时不可见的信息。
-
-请使用中文，语气像严谨但耐心的教练。每完成一节，给我一张简短的学习进度卡：已掌握、待巩固、下一步。现在先开始诊断提问，不要直接讲第一课。
-```
-
-### 运行课程
 
 不需要安装依赖。克隆仓库后直接打开根目录的`index.html`即可进入中文课程；英文入口为`en/index.html`。所有核心交互使用原生HTML、CSS和JavaScript，麻将牌图形由内置SVG动态绘制，学习进度保存在浏览器本地。
 
@@ -59,6 +35,47 @@ python -m http.server 8000
 ```
 
 然后访问`http://localhost:8000/`。英文版位于`/en/`。
+
+### 双语单文件离线版
+
+如果只想携带一个文件，直接下载或打开[`standalone.html`](standalone.html)。它不依赖`assets/`、外部字体、外部脚本或网络连接，同一个文件内可切换中文/English，并内置完整教材与交互工具。离线版首页和页脚持续标明原作者`jyu-zhou`与原项目地址；“查看最新版本”按钮始终回到本仓库，便于确认更新与来源。
+
+## 让 Agent 先读取本项目，再基于教材教学
+
+如果你希望让 ChatGPT、Claude、Codex 或其他 **Agent** 充当川麻教练，不建议只把一句“教我四川麻将”交给它。更稳妥的做法是让 Agent **先获取并读取这个仓库**，确认项目版本和规则合同，再基于正式教材授课。这样可以显著减少模型把别的麻将变体、旧版计分或自身记忆混入课程的风险。
+
+完整可复制版本见 [`AGENT_GUIDE.md`](AGENT_GUIDE.md)。下面这段可以直接交给具备 Git/文件访问能力的 Agent：
+
+```text
+你现在是我的四川麻将（川麻）教学 Agent。不要先凭模型已有知识开始讲课。
+
+项目仓库：https://github.com/jyu-zhou/sichuan-mahjong-masterclass
+
+第一步先获取并读取项目：
+- 如果本地已有仓库，检查状态，并在不覆盖未提交改动的前提下更新到最新 main；能安全执行时使用 `git pull --ff-only`。
+- 如果没有仓库且可以使用 Git，执行：`git clone https://github.com/jyu-zhou/sichuan-mahjong-masterclass.git`。
+- 如果不能使用 Git 但可以下载文件，下载 GitHub 最新源码 ZIP 并解压。
+- 如果无法访问 GitHub，也没有我提供的文件，明确告诉我你尚未读取项目，并请我提供仓库副本、ZIP 或 `standalone.html`；不要假装已经读过。
+
+获取后先读取 `VERSION`，并确认至少存在：`README.md`、`docs/zh-CN/textbook.md`、`assets/content.zh-CN.json`、`index.html`、`standalone.html`。
+
+教学资料优先级：
+1. `README.md` —— 项目定位、规则范围、方法论；
+2. `docs/zh-CN/textbook.md` —— 中文正式教材，作为主要教学依据；
+3. `assets/content.zh-CN.json` —— 用于核对互动课程、练习、番型和规则数据；
+4. 必要时查看 `index.html` / `assets/app.js` 理解互动工具；
+5. 只有完整仓库不可用时，才优先使用 `standalone.html` 作为便携备用教材。
+
+在真正读取项目后，先给我一张“项目加载卡”：项目版本、成功读取的核心文件、采用的规则主线、仍需确认的房间参数、是否存在缺失或版本冲突。然后再询问我的水平、学习时间、实际游戏/房间、学习偏好和是否能提供牌谱，并基于项目教材安排4—12周课程。
+
+每节课必须注明对应教材章节；先讲一个小主题，再让我作答；纠错时区分“可由规则/牌张守恒证明”“依赖假设的条件模型”“需要真实牌谱验证的经验判断”。分析实战牌局时按：定缺与合法性 → 牌形/向听 → 候选弃牌 → 有效张与公开牌修正 → 番型结算 → 逐家风险 → 残局规则 → 条件期望收益。
+
+如果我给出的当前房间规则与项目基线不同，先列出差异和策略影响；不要暗中混用其他麻将规则。不要承诺固定胜率、保证盈利或必胜打法。
+
+现在先获取并读取项目，给我“项目加载卡”。没有真正读完核心文件之前，不要开始第一课。
+```
+
+> 如果 Agent 没有联网能力，可以直接把本仓库目录、源码 ZIP 或 `standalone.html` 交给它，再要求它按同样的读取优先级工作。
 
 ## 规则范围
 
@@ -87,6 +104,9 @@ python -m http.server 8000
 ```text
 sichuan-mahjong-masterclass/
 ├── index.html                  # 中文默认入口
+├── standalone.html             # 中英双语单文件离线版
+├── AGENT_GUIDE.md              # Agent基于项目教学的中文提示词
+├── AGENT_GUIDE.en.md           # English Agent guide
 ├── textbook.html               # 中文完整教材网页版
 ├── README.md                   # 中文项目说明
 ├── README.en.md                # English README
@@ -132,7 +152,7 @@ sichuan-mahjong-masterclass/
 - `Sichuan-Mahjong-Masterclass-zh-CN-vX.Y.Z.zip`：中文默认课程与教材；
 - `Sichuan-Mahjong-Masterclass-en-vX.Y.Z.zip`：英文课程与教材。
 
-仓库中的GitHub Actions工作流负责Pages部署，并在版本发布时生成/上传双语Release资产。当前版本：**v1.3.0**。
+仓库中的GitHub Actions工作流负责Pages部署，并在版本发布时生成/上传双语Release资产。当前课程版本：**v1.3.2**。仓库根目录另提供`standalone.html`作为便携双语单文件版。
 
 ## 数据与策略边界
 

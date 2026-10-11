@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.3.2
+
+- Corrected Agent onboarding language in both READMEs and corrected the previously invalid Agent naming.
+- Added a repository-first Agent workflow: the Agent must clone/download and read `VERSION`, the README, canonical textbook, and course data before teaching; it must explicitly report when repository access is unavailable.
+- Added `AGENT_GUIDE.md` / `AGENT_GUIDE.en.md` with full copy-ready teaching prompts.
+- Synchronized textbook, course-data, HTML, standalone, and release version labels to v1.3.2.
+- Reader release bundles now include `standalone.html` and the Agent teaching guides.
+
+## v1.3.1
+
+- Added root-level `standalone.html`: bilingual, single-file, self-contained, and fully offline.
+- Chinese, English, and standalone home pages now surface the original author (`jyu-zhou`) and source project more clearly; the primary textbook nav action is replaced by a Latest Version link, while the textbook remains available as a secondary action.
+- Updated both READMEs with standalone usage and repository-layout documentation.
+
 ## v1.3.0
 
 - Canonical project name is now **Sichuan Mahjong Masterclass**, with “Chuan Mahjong” used as the short-form English reference.

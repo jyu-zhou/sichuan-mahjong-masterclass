@@ -1,5 +1,19 @@
 # 更新日志
 
+## v1.3.2
+
+- 修正 README 中的 Agent 使用说明：统一使用“Agent”，修正此前错误的 Agent 命名。
+- 新增仓库优先的 Agent 教学工作流：Agent 必须先 clone/下载并读取项目的 `VERSION`、README、正式教材和课程数据，再开始授课；无法访问项目时必须明确说明。
+- 新增 `AGENT_GUIDE.md` / `AGENT_GUIDE.en.md`，提供完整可复制的中英文教学 Prompt。
+- 统一教材、课程数据、HTML、单文件离线版和 Release 的版本号为 v1.3.2。
+- Release 读者包现在同时包含 `standalone.html` 与 Agent 教学指南。
+
+## v1.3.1
+
+- 新增根目录 `standalone.html`：中英文双语、单文件、自包含、可离线运行。
+- 中文、英文和离线版首页均强化原作者 `jyu-zhou` 与原项目来源；主导航将“完整教材”改为“查看最新版本”，完整教材移至次级入口。
+- 中英文 README 增加离线版使用说明和仓库结构说明。
+
 ## v1.3.0
 
 - 项目正式统一命名为“**四川麻将大师学院**”，简称川麻；英文统一为“**Sichuan Mahjong Masterclass / Chuan Mahjong**”。

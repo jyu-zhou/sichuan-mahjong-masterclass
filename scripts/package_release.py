@@ -15,7 +15,7 @@ def copy_common(dst: Path) -> None:
     (dst / 'docs' / 'en').mkdir(parents=True)
     shutil.copy2(ROOT / 'docs/zh-CN/textbook.md', dst / 'docs/zh-CN/textbook.md')
     shutil.copy2(ROOT / 'docs/en/textbook.md', dst / 'docs/en/textbook.md')
-    for name in ['VERSION', 'CHANGELOG.md', 'CHANGELOG.en.md']:
+    for name in ['VERSION', 'CHANGELOG.md', 'CHANGELOG.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md']:
         shutil.copy2(ROOT / name, dst / name)
 
 
@@ -29,7 +29,7 @@ def make_zip(src: Path, dst: Path) -> None:
 def chinese_bundle(dst: Path) -> None:
     copy_common(dst)
     for name in ['index.html', 'textbook.html', 'README.md', 'README.en.md',
-                 'CONTRIBUTING.md', 'CONTRIBUTING.en.md']:
+                 'CONTRIBUTING.md', 'CONTRIBUTING.en.md', 'standalone.html']:
         shutil.copy2(ROOT / name, dst / name)
     (dst / 'en').mkdir()
     shutil.copy2(ROOT / 'en/index.html', dst / 'en/index.html')
@@ -38,6 +38,7 @@ def chinese_bundle(dst: Path) -> None:
 
 def english_bundle(dst: Path) -> None:
     copy_common(dst)
+    shutil.copy2(ROOT / 'standalone.html', dst / 'standalone.html')
 
     # English becomes the package root while Chinese remains one click away.
     text = (ROOT / 'en/index.html').read_text(encoding='utf-8')

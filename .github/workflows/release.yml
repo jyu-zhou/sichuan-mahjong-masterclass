@@ -6,7 +6,17 @@ on:
     paths:
       - VERSION
       - RELEASE_NOTES.md
-      - release/**
+      - README.md
+      - README.en.md
+      - AGENT_GUIDE.md
+      - AGENT_GUIDE.en.md
+      - index.html
+      - standalone.html
+      - en/**
+      - docs/**
+      - assets/**
+      - scripts/build.py
+      - scripts/package_release.py
       - .github/workflows/release.yml
   workflow_dispatch:
 
@@ -18,18 +28,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build generated course files
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python scripts/build.py
+          python scripts/qa.py
+      - name: Build bilingual reader bundles
+        run: python scripts/package_release.py
       - name: Create or update release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           TAG="v$(cat VERSION)"
+          ASSETS=(
+            "release/Sichuan-Mahjong-Masterclass-zh-CN-${TAG}.zip"
+            "release/Sichuan-Mahjong-Masterclass-en-${TAG}.zip"
+            "release/SHA256SUMS.txt"
+            "standalone.html"
+          )
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" release/*.zip release/SHA256SUMS.txt --clobber
+            gh release upload "$TAG" "${ASSETS[@]}" --clobber
+            gh release edit "$TAG" --notes-file RELEASE_NOTES.md --title "四川麻将大师学院 / Sichuan Mahjong Masterclass $TAG"
           else
-            gh release create "$TAG" \
-              --target "$GITHUB_SHA" \
-              --title "四川麻将大师学院 / Sichuan Mahjong Masterclass $TAG" \
-              --notes-file RELEASE_NOTES.md \
-              release/*.zip release/SHA256SUMS.txt
+            gh release create "$TAG"               --target "$GITHUB_SHA"               --title "四川麻将大师学院 / Sichuan Mahjong Masterclass $TAG"               --notes-file RELEASE_NOTES.md               "${ASSETS[@]}"
           fi

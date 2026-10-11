@@ -30,7 +30,7 @@ if [x[1] for x in zh['fans']] != [x[1] for x in en['fans']]:
 
 required = [
     'index.html', 'en/index.html', 'textbook.html', 'en/textbook.html',
-    'README.md', 'README.en.md', 'CONTRIBUTING.md', 'CONTRIBUTING.en.md',
+    'README.md', 'README.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md', 'standalone.html', 'CONTRIBUTING.md', 'CONTRIBUTING.en.md',
     'docs/zh-CN/textbook.md', 'docs/en/textbook.md',
 ]
 for path in required:
@@ -50,6 +50,7 @@ forbidden = [
     '你' + '提供的截图',
     '我们' + '之前讨论',
     '用户' + '上传的番型',
+    'A' + 'Agent',
 ]
 for path in list(ROOT.rglob('*.md')) + list(ROOT.rglob('*.html')) + list(ROOT.glob('assets/content.*.json')):
     if '/release/' in path.as_posix():
@@ -75,4 +76,4 @@ for path in [ROOT/'index.html', ROOT/'en/index.html', ROOT/'textbook.html', ROOT
 if errors:
     print('\n'.join('ERROR: ' + item for item in errors))
     sys.exit(1)
-print('QA passed: bilingual content, naming, links, counts, author/project credit, and publication wording are consistent.')
+print('QA passed: bilingual content, naming, links, counts, Agent guides, standalone edition, author/project credit, and publication wording are consistent.')

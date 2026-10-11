@@ -1,4 +1,4 @@
-# Sichuan Mahjong Masterclass v1.3.0
+# Sichuan Mahjong Masterclass v1.3.2
 
 > **Scope:** A zero-to-advanced course for Sichuan Mahjong (Chuan Mahjong). The canonical line uses four players, 108 suited tiles, Swap Three, fixed Dingque (Declare a Missing Suit), no chow, pung/kong allowed, and Blood Battle to the End.
 >

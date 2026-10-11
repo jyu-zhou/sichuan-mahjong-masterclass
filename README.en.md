@@ -1,6 +1,6 @@
 # Sichuan Mahjong Masterclass
 
-[中文](README.md) · [Chinese Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [English Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [Full English Textbook](docs/en/textbook.md) · [Latest Release](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
+[中文](README.md) · [Chinese Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [English Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [Bilingual Single-file Offline Edition](standalone.html) · [Full English Textbook](docs/en/textbook.md) · [Agent Teaching Guide](AGENT_GUIDE.en.md) · [Latest Release](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
 
 > A zero-to-advanced curriculum for **Sichuan Mahjong (Chuan Mahjong)**. The project focuses on Blood Battle to the End and teaches decisions through legality, tile efficiency, probability, expected value, opponent-specific risk, and scientific review instead of unverifiable “expert rules of thumb.”
 
@@ -21,33 +21,9 @@ The course serves both complete beginners and experienced players who want a mor
 - **Probability and score calculators** for hypergeometric draws, fan multipliers, Flower Pig settlement, and attack/defense break-even risk.
 - **Continuous-reading timeline** that separates certain facts, rule exclusions, probabilistic clues, and hidden-state transitions.
 - **Full bilingual textbook** in both Markdown and browser-friendly HTML.
+- **Bilingual single-file offline edition**: [`standalone.html`](standalone.html) embeds both languages, the full textbooks, SVG tiles, styles, scripts, and rule-reference images into one portable HTML file.
 
 ## Quick start
-
-### Chinese teaching-agent prompt
-
-Copy the full prompt below into your preferred AAgent, ChatGPT, Claude, or other teaching agent, then add your own skill level and schedule if useful. It asks the agent to diagnose first and build a progressive Sichuan Mahjong curriculum instead of dumping rules all at once.
-
-```text
-You are my Sichuan Mahjong (Chuan Mahjong) coach and curriculum-planning agent. Take me from my current level to independent decisions about legality, tile efficiency, fan scoring and settlement, probability, per-opponent defense, and scientific review.
-
-Teaching baseline: use four players, 108 suited tiles, Swap Three, fixed Dingque, no chow, pung/kong allowed, and Blood Battle to the End by default. The current game/room rules page has highest priority. If my room differs from this baseline, list the differences and their consequences before teaching; never silently mix rule sets.
-
-Ask me only these questions first and wait for my answers: (1) am I a complete beginner; (2) how many sessions per week and how many minutes per session; (3) which game/room and what rule differences it uses; (4) whether I prefer practical play, mathematics, tile reading, or defense; (5) whether I can provide hand histories. After I answer, produce a 4–12 week curriculum with weekly goals, prerequisites, drills, review tasks, and acceptance checks.
-
-Then advance one small lesson at a time using this fixed format:
-1. Objective and prerequisites;
-2. A concise explanation with one concrete hand example;
-3. An interactive question and wait for my answer before revealing it;
-4. Correct my answer, explicitly separating rule/tile-conservation proofs, assumption-dependent conditional models, and empirical claims requiring real hand histories;
-5. A practice task that fits within 10 minutes, review questions, and the next lesson entry point.
-
-For a hand-history question, check Dingque, action legality, hand shape, and visible tiles before discussing efficiency, waits, probability, per-opponent risk, or expected value. If information is missing, name the missing facts and branch explicitly; never invent tiles or precise probabilities. Do not promise win rate, profit, or a “guaranteed strategy,” and do not judge a decision using tiles that were not visible at the time.
-
-Use clear, patient English and preserve Chinese/pinyin terms when useful. After each lesson, give me a compact progress card: mastered, needs reinforcement, next step. Start with the diagnostic questions now; do not teach Lesson 1 yet.
-```
-
-### Run the course
 
 No dependency installation is required. Clone the repository and open `index.html` for the default Chinese course or `en/index.html` for English. The interactive course is implemented with plain HTML, CSS, and JavaScript; Mahjong tiles are generated as reusable inline SVG, and progress is stored locally in the browser.
 
@@ -59,6 +35,47 @@ python -m http.server 8000
 ```
 
 Open `http://localhost:8000/en/` for the English course.
+
+### Bilingual single-file offline edition
+
+For a truly portable copy, download or open [`standalone.html`](standalone.html). It has no dependency on `assets/`, external fonts, external scripts, or a network connection. Chinese and English switch inside the same file, and the full textbook plus interactive tools are embedded. The standalone edition permanently identifies the original author (`jyu-zhou`) and source repository, while its “Latest Version” action always points back to this project so provenance and updates remain easy to verify.
+
+## Make the Agent read the project before it teaches
+
+If you want ChatGPT, Claude, Codex, or another **Agent** to act as your Sichuan Mahjong coach, do not rely on a generic “teach me Sichuan Mahjong” prompt. A more reliable workflow is to make the Agent **obtain and read this repository first**, verify the project version and rule contract, and only then teach from the canonical textbook. This reduces accidental mixing of other Mahjong variants, outdated scoring tables, or the model's generic memory.
+
+See [`AGENT_GUIDE.en.md`](AGENT_GUIDE.en.md) for the full copy-ready prompt. The compact version below works with an Agent that has Git/file access:
+
+```text
+You are my Sichuan Mahjong (Chuan Mahjong) teaching Agent. Do not start by teaching from generic model memory.
+
+Repository: https://github.com/jyu-zhou/sichuan-mahjong-masterclass
+
+First obtain and read the project:
+- If the repo already exists locally, inspect its state and update to the latest main only when this will not overwrite uncommitted work; use `git pull --ff-only` when safe.
+- If it is absent and Git is available, run: `git clone https://github.com/jyu-zhou/sichuan-mahjong-masterclass.git`.
+- If Git is unavailable but downloads are possible, download and extract the latest GitHub source ZIP.
+- If you cannot access GitHub and I have not supplied the files, explicitly tell me that you have not read the project and ask me for a repo copy, ZIP, or `standalone.html`. Never pretend the files were loaded.
+
+After obtaining it, read `VERSION` and verify at least: `README.en.md`, `docs/en/textbook.md`, `assets/content.en.json`, `en/index.html`, and `standalone.html`.
+
+Use this reading priority:
+1. `README.en.md` for scope, rules, and methodology;
+2. `docs/en/textbook.md` as the canonical English teaching text;
+3. `assets/content.en.json` to cross-check interactive lessons, quizzes, fan data, and rule content;
+4. inspect `en/index.html` / `assets/app.js` when you need to understand the interactive tools;
+5. use `standalone.html` as the portable fallback when the full repository is unavailable.
+
+Once you have actually read the project, give me a “Project Load Card”: version, core files read, active ruleset, room-dependent parameters still requiring confirmation, and any missing/version-conflict issues. Then ask about my skill level, schedule, actual game/room, learning preference, and whether I can provide hand histories, and create a 4–12 week curriculum grounded in the project.
+
+For each lesson, name the corresponding textbook section, teach one small topic, ask me a question before revealing the answer, and distinguish exact rule/tile-conservation results, assumption-dependent conditional models, and empirical claims requiring real hand histories. For a real hand, analyze in this order: Dingque/legality → shape/shanten → candidate discards → effective tiles and visible-tile correction → fan/settlement → per-opponent risk → endgame rules → conditional expected value.
+
+If my current room rules differ from the project baseline, list the differences and strategic consequences first. Do not silently mix another Mahjong ruleset. Do not promise a fixed win rate, guaranteed profit, or an unbeatable strategy.
+
+Start by obtaining and reading the project and giving me the Project Load Card. Do not begin Lesson 1 until the core files have actually been read.
+```
+
+> If the Agent has no network access, give it this repository directory, a source ZIP, or `standalone.html`, then keep the same “read the project first” rule.
 
 ## Rules scope
 
@@ -87,6 +104,9 @@ The mathematical toolkit includes physical copy conservation, sampling without r
 ```text
 sichuan-mahjong-masterclass/
 ├── index.html                  # Default Chinese entry point
+├── standalone.html             # Bilingual single-file offline edition
+├── AGENT_GUIDE.md              # Chinese repository-first Agent prompt
+├── AGENT_GUIDE.en.md           # English repository-first Agent prompt
 ├── textbook.html               # Full Chinese textbook in HTML
 ├── README.md                   # Chinese README
 ├── README.en.md                # This file
@@ -132,7 +152,7 @@ Each formal release exposes two reader-facing offline packages:
 - `Sichuan-Mahjong-Masterclass-zh-CN-vX.Y.Z.zip`
 - `Sichuan-Mahjong-Masterclass-en-vX.Y.Z.zip`
 
-GitHub Actions in the repository are prepared for Pages deployment and bilingual Release asset publication. Current version: **v1.3.0**.
+GitHub Actions in the repository are prepared for Pages deployment and bilingual Release asset publication. Current course version: **v1.3.2**. The repository root also ships `standalone.html` as the portable bilingual single-file edition.
 
 ## Strategy and data boundaries
 
