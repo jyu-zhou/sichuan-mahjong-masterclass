@@ -12,7 +12,7 @@
 [![Content: CC BY 4.0](https://img.shields.io/badge/教材-CC%20BY%204.0-a87839?style=flat-square)](LICENSE-CONTENT)
 [![Lessons](https://img.shields.io/badge/课程-34%20课-405852?style=flat-square)](#课程导读)
 
-[English](README.en.md) · [在线课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [离线单文件](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest) · [完整教材](docs/zh-CN/textbook.md)
+[English](README.en.md) · [在线课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [完整教材](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/textbook.html) · [离线单文件](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest/download/standalone.html) · [Releases](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
 
 </div>
 
@@ -26,8 +26,8 @@
 
 <table>
 <tr><td align="right"><b>直接学习</b></td><td><a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/">中文在线课程</a> · <a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/">English</a></td></tr>
-<tr><td align="right"><b>离线携带</b></td><td><a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest">Release 下载</a> · <a href="standalone.html">仓库内单文件 HTML</a></td></tr>
-<tr><td align="right"><b>查教材</b></td><td><a href="docs/zh-CN/textbook.md">中文 Markdown 教材</a> · <a href="textbook.html">浏览器教材</a> · <a href="docs/en/textbook.md">English textbook</a></td></tr>
+<tr><td align="right"><b>离线携带</b></td><td><a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest/download/standalone.html">直接下载单文件 HTML</a> · <a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest">查看全部 Release 资产</a></td></tr>
+<tr><td align="right"><b>查教材</b></td><td><a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/textbook.html">中文在线教材</a> · <a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/textbook.html">English textbook</a> · <a href="docs/zh-CN/textbook.md">中文 Markdown 源文档</a></td></tr>
 <tr><td align="right"><b>让 AI 教</b></td><td><a href="#让-aiagent-按本项目教学">复制 Quick Start Prompt</a> · <a href="AGENT_GUIDE.md">完整 Agent Guide</a></td></tr>
 <tr><td align="right"><b>动手练</b></td><td>摆牌实验室 · 番型图鉴 · 概率/收益计算器 · 45 道互动题 · 连续读牌时间轴</td></tr>
 <tr><td align="right"><b>参与项目</b></td><td><a href="CONTRIBUTING.md">贡献指南</a> · <a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/issues">Issues</a> · <a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases">Releases</a></td></tr>
@@ -63,7 +63,7 @@
 
 - **第一次学**：在线课程从第 1 课往后走；每课读完做本课验收，再进入下一课。
 - **会打但不稳定**：重点做摆牌实验室、弃牌比较、概率题和连续读牌。
-- **想研究打法**：先读 Markdown 教材，再看公式的适用前提和反例；不要把模型输出当成真实牌桌统计。
+- **想研究打法**：先读[在线完整教材](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/textbook.html)；需要引用、对照版本或查看源码时，再打开 [Markdown 源文档](docs/zh-CN/textbook.md)。不要把模型输出当成真实牌桌统计。
 - **想离线带走**：Release 里的 `standalone.html` 是完整双语单文件，双击即可运行，不需要服务器。
 - **想让 AI 陪练**：使用下面的 Prompt 或完整 [Agent Guide](AGENT_GUIDE.md)，让 Agent 先读取项目再授课。
 
