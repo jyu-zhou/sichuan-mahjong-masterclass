@@ -15,7 +15,7 @@ def copy_common(dst: Path) -> None:
     (dst / 'docs' / 'en').mkdir(parents=True)
     shutil.copy2(ROOT / 'docs/zh-CN/textbook.md', dst / 'docs/zh-CN/textbook.md')
     shutil.copy2(ROOT / 'docs/en/textbook.md', dst / 'docs/en/textbook.md')
-    for name in ['VERSION', 'CHANGELOG.md', 'CHANGELOG.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md']:
+    for name in ['VERSION', 'CHANGELOG.md', 'CHANGELOG.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md', 'LICENSE']:
         shutil.copy2(ROOT / name, dst / name)
 
 

@@ -30,7 +30,7 @@ if [x[1] for x in zh['fans']] != [x[1] for x in en['fans']]:
 
 required = [
     'index.html', 'en/index.html', 'textbook.html', 'en/textbook.html',
-    'README.md', 'README.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md', 'standalone.html', 'CONTRIBUTING.md', 'CONTRIBUTING.en.md',
+    'README.md', 'README.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md', 'standalone.html', 'LICENSE', 'assets/logo.svg', 'CONTRIBUTING.md', 'CONTRIBUTING.en.md',
     'docs/zh-CN/textbook.md', 'docs/en/textbook.md',
 ]
 for path in required:

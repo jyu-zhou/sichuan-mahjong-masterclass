@@ -1,177 +1,131 @@
+<div align="center">
+
+<img src="assets/logo.svg" width="128" alt="四川麻将大师学院 Logo">
+
 # 四川麻将大师学院
 
-[English](README.en.md) · [在线中文课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [英文课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [双语单文件离线版](standalone.html) · [完整中文教材](docs/zh-CN/textbook.md) · [Agent 教学指南](AGENT_GUIDE.md) · [最新 Release](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
+**一套双语、离线优先、强调可验证推理的四川麻将（川麻）学习项目。**
 
-> 一套从零基础到高级决策的四川麻将（简称“川麻”）系统教材与离线互动课程。项目聚焦血战到底主线，用规则约束、牌效率、概率论、期望收益、逐家风险和科学复盘来解释“为什么这样打”，而不是堆砌无法验证的口诀。
+[![Latest Release](https://img.shields.io/github/v/release/jyu-zhou/sichuan-mahjong-masterclass?sort=semver)](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
+[![GitHub Pages](https://img.shields.io/badge/demo-GitHub%20Pages-2ea44f?logo=github)](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Runtime](https://img.shields.io/badge/runtime-vanilla%20HTML%2FCSS%2FJS-f7df1e)](#开发)
 
-**作者：[@jyu-zhou](https://github.com/jyu-zhou)**
+[English](README.en.md) · [在线课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [英文版](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [Releases](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
 
-## 项目定位
+</div>
 
-本项目面向两类读者：第一次接触川麻、需要从认牌和合法胡牌学起的新手；以及已经会打牌、希望用更严格的方法提高决策质量的进阶玩家。课程采用四人、万筒条108张、换三张、固定定缺、不吃、可碰杠、血战到底作为主线，并以当前番型表和终局结算规则为准。
+四川麻将大师学院把规则、牌效率、番型、概率、攻守、残局和复盘放进一条连续学习路径。项目既适合第一次接触川麻的新手，也适合希望用更严格的方法分析牌局的进阶玩家。
 
-这里的“科学”不是宣称存在必胜算法，而是要求每个结论说明证据层级：哪些可以由牌张守恒和枚举证明，哪些依赖概率假设，哪些只能通过真实牌谱长期验证。
+核心原则：**先保证合法，再谈牌效；先区分确定信息与隐藏信息，再谈概率；最后才比较条件期望收益。**
 
-## 核心内容
+## Demo 与下载
 
-- **34堂循序课程**：认牌→胡牌结构→换三张→定缺→牌效率→番型→概率→攻守→残局→科学复盘。
-- **45道互动练习**：规则、牌效、概率和策略混合训练，作答后给出解释。
-- **完整番型图鉴**：基础番型0—8番、叠加×2条件、天胡/地胡非叠加处理。
-- **互动摆牌实验室**：13张枚举听口、14张比较弃牌后直接听口、公开牌修正、四枚上限校验。
-- **概率与收益计算器**：不放回抽样、番型倍数、花猪特殊罚款、攻守临界风险。
-- **连续读牌时间轴**：把确定事实、规则排除、概率线索和状态变化分层处理。
-- **完整双语教材**：中文默认，英文版本结构对应；网页和Markdown均可离线学习。
-- **双语单文件离线版**：[`standalone.html`](standalone.html)把中英文课程、教材、SVG牌面、脚本、样式和规则参考图全部嵌入一个HTML文件，可复制到任意设备直接离线运行。
+| 入口 | 用途 |
+| --- | --- |
+| [中文在线课程](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) | 默认入口，直接在浏览器学习 |
+| [English Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) | 完整英文课程 |
+| [最新 Release](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest) | 中英文离线包、SHA-256 校验和单文件版 |
+| [standalone.html](standalone.html) | 单个 HTML 文件即可离线运行，中英文可切换 |
+| [中文教材](docs/zh-CN/textbook.md) | 适合阅读、引用和版本审查 |
+| [Agent 教学指南](AGENT_GUIDE.md) | 让 Agent 先读取本仓库，再按教材授课 |
 
-## 快速开始
+## Features
 
-不需要安装依赖。克隆仓库后直接打开根目录的`index.html`即可进入中文课程；英文入口为`en/index.html`。所有核心交互使用原生HTML、CSS和JavaScript，麻将牌图形由内置SVG动态绘制，学习进度保存在浏览器本地。
+- **34 堂循序课程**：认牌 → 胡牌结构 → 换三张 → 定缺 → 牌效率 → 番型 → 概率 → 攻守 → 残局 → 复盘。
+- **45 道互动练习**，覆盖规则、结构、概率与策略辨析。
+- **番型图鉴与摆牌实验室**：13 张听口、14 张弃牌比较、公开牌修正、四枚上限校验。
+- **概率与收益工具**：不放回抽样、番型结算、花猪罚则和攻守临界值。
+- **连续读牌时间轴**：区分确定事实、规则排除、概率线索与隐藏状态变化。
+- **双语与离线优先**：中文默认、完整英文版、Markdown 教材、浏览器教材以及单文件离线版。
+- **Agent-first 教学**：要求 AI Agent 先获取并读取当前项目，而不是凭通用模型记忆混用其他麻将规则。
+
+## Quick start
+
+课程运行本身**没有运行时依赖**。克隆仓库后直接打开 HTML，或用任意静态服务器启动：
 
 ```bash
 git clone https://github.com/jyu-zhou/sichuan-mahjong-masterclass.git
 cd sichuan-mahjong-masterclass
-# 直接双击 index.html，或启动任意静态文件服务器
 python -m http.server 8000
 ```
 
-然后访问`http://localhost:8000/`。英文版位于`/en/`。
+然后访问：
 
-### 双语单文件离线版
+- 中文：<http://localhost:8000/>
+- English：<http://localhost:8000/en/>
 
-如果只想携带一个文件，直接下载或打开[`standalone.html`](standalone.html)。它不依赖`assets/`、外部字体、外部脚本或网络连接，同一个文件内可切换中文/English，并内置完整教材与交互工具。离线版首页和页脚持续标明原作者`jyu-zhou`与原项目地址；“查看最新版本”按钮始终回到本仓库，便于确认更新与来源。
-
-## 让 Agent 先读取本项目，再基于教材教学
-
-如果你希望让 ChatGPT、Claude、Codex 或其他 **Agent** 充当川麻教练，不建议只把一句“教我四川麻将”交给它。更稳妥的做法是让 Agent **先获取并读取这个仓库**，确认项目版本和规则合同，再基于正式教材授课。这样可以显著减少模型把别的麻将变体、旧版计分或自身记忆混入课程的风险。
-
-完整可复制版本见 [`AGENT_GUIDE.md`](AGENT_GUIDE.md)。下面这段可以直接交给具备 Git/文件访问能力的 Agent：
-
-```text
-你现在是我的四川麻将（川麻）教学 Agent。不要先凭模型已有知识开始讲课。
-
-项目仓库：https://github.com/jyu-zhou/sichuan-mahjong-masterclass
-
-第一步先获取并读取项目：
-- 如果本地已有仓库，检查状态，并在不覆盖未提交改动的前提下更新到最新 main；能安全执行时使用 `git pull --ff-only`。
-- 如果没有仓库且可以使用 Git，执行：`git clone https://github.com/jyu-zhou/sichuan-mahjong-masterclass.git`。
-- 如果不能使用 Git 但可以下载文件，下载 GitHub 最新源码 ZIP 并解压。
-- 如果无法访问 GitHub，也没有我提供的文件，明确告诉我你尚未读取项目，并请我提供仓库副本、ZIP 或 `standalone.html`；不要假装已经读过。
-
-获取后先读取 `VERSION`，并确认至少存在：`README.md`、`docs/zh-CN/textbook.md`、`assets/content.zh-CN.json`、`index.html`、`standalone.html`。
-
-教学资料优先级：
-1. `README.md` —— 项目定位、规则范围、方法论；
-2. `docs/zh-CN/textbook.md` —— 中文正式教材，作为主要教学依据；
-3. `assets/content.zh-CN.json` —— 用于核对互动课程、练习、番型和规则数据；
-4. 必要时查看 `index.html` / `assets/app.js` 理解互动工具；
-5. 只有完整仓库不可用时，才优先使用 `standalone.html` 作为便携备用教材。
-
-在真正读取项目后，先给我一张“项目加载卡”：项目版本、成功读取的核心文件、采用的规则主线、仍需确认的房间参数、是否存在缺失或版本冲突。然后再询问我的水平、学习时间、实际游戏/房间、学习偏好和是否能提供牌谱，并基于项目教材安排4—12周课程。
-
-每节课必须注明对应教材章节；先讲一个小主题，再让我作答；纠错时区分“可由规则/牌张守恒证明”“依赖假设的条件模型”“需要真实牌谱验证的经验判断”。分析实战牌局时按：定缺与合法性 → 牌形/向听 → 候选弃牌 → 有效张与公开牌修正 → 番型结算 → 逐家风险 → 残局规则 → 条件期望收益。
-
-如果我给出的当前房间规则与项目基线不同，先列出差异和策略影响；不要暗中混用其他麻将规则。不要承诺固定胜率、保证盈利或必胜打法。
-
-现在先获取并读取项目，给我“项目加载卡”。没有真正读完核心文件之前，不要开始第一课。
-```
-
-> 如果 Agent 没有联网能力，可以直接把本仓库目录、源码 ZIP 或 `standalone.html` 交给它，再要求它按同样的读取优先级工作。
+如果只需要便携版本，下载 [`standalone.html`](standalone.html) 即可。它把课程、教材、SVG 牌面、样式、脚本和规则参考图全部内嵌在一个文件里。
 
 ## 规则范围
 
-当前教材将以下规则作为主线：四人、108张纯花色牌、换三张、固定定缺、不吃、可碰杠、胡牌后退出，第三家胡或牌墙耗尽结束。番型主表从平胡0番1倍开始，包含碰碰胡、清一色、七对、金钩钓、龙七对、十八罗汉及其清一色/多龙复合型；自摸、杠上花、杠上炮、抢杠胡、海底捞月和根按当前表作为×2条件处理，天胡和地胡按场次封顶且不与其他番型叠加。
+项目主线采用四人、108 张万/筒/条、换三张、固定定缺、不吃、可碰杠、血战到底。当前游戏内番型表和结算页是项目的主规则合同；房间参数或平台实现存在差异时，教材会显式标注，而不是把不同规则集混在一起。
 
-终局重点规则包括查花猪、查大叫、退税与呼叫转移。不同房间可能有普通封顶、杠钱支付关系、过水解除等差异，因此相关数值在课程中保持参数化；历史腾讯赛事规则只用于交叉核对基础机制，不覆盖当前番型表。
+终局重点覆盖花猪、查大叫、退税与呼叫转移。完整规则合同和番型说明见 [中文教材](docs/zh-CN/textbook.md)。
 
-详细规则合同见[`docs/zh-CN/textbook.md`](docs/zh-CN/textbook.md)。
-
-## 方法论
-
-项目的核心不是“记危险牌口诀”，而是一条固定推理链：
-
-1. **合法性**：定缺是否清净、动作是否合法、胡牌结构能否完整分解。
-2. **确定性牌效**：枚举候选弃牌、听口、理论资源与公开牌修正。
-3. **隐藏信息**：把未见张与墙内张分开；只在样本空间明确时使用概率公式。
-4. **逐家风险**：对每名对手分别判断“能否胡、可能胡多大、谁付款”。
-5. **期望收益**：把胡牌收入、点炮损失、杠账、残局罚则和机会成本放到同一模型。
-6. **动态更新**：对手摸打会改变隐藏状态，跨巡证据不能机械重复相乘。
-7. **反事实复盘**：只用决策当时可见的信息评价选择，不用后来出现的牌倒推“必错”。
-
-教材中常用的数学工具包括牌张守恒、不放回抽样、贝叶斯更新、线性期望与风险临界值。公式的价值在于明确前提，而不是制造虚假的精确概率。
+> 本项目讨论的是决策质量，不提供“必胜”“保证盈利”或固定胜率承诺。
 
 ## 项目结构
 
 ```text
-sichuan-mahjong-masterclass/
-├── index.html                  # 中文默认入口
+.
+├── index.html                  # 中文课程
+├── en/                         # English course
 ├── standalone.html             # 中英双语单文件离线版
-├── AGENT_GUIDE.md              # Agent基于项目教学的中文提示词
-├── AGENT_GUIDE.en.md           # English Agent guide
-├── textbook.html               # 中文完整教材网页版
-├── README.md                   # 中文项目说明
-├── README.en.md                # English README
-├── en/
-│   ├── index.html              # English course
-│   └── textbook.html           # English full textbook
+├── textbook.html               # 中文教材网页版
+├── docs/                       # 中英文 Markdown 教材
 ├── assets/
 │   ├── app.css                 # 共享样式
-│   ├── app.js                  # 共享课程/实验室逻辑
-│   ├── content.zh-CN.js        # 中文课程数据
-│   ├── content.en.js           # English course data
-│   └── rules/                  # 规则界面参考图
-├── docs/
-│   ├── zh-CN/textbook.md       # 中文正式教材
-│   └── en/textbook.md          # English textbook
-├── release/                    # Release打包资产
-└── .github/workflows/          # GitHub Pages与Release自动化
+│   ├── app.js                  # 共享交互逻辑
+│   ├── content.*               # 双语课程数据
+│   ├── logo.svg                # 项目 Logo
+│   └── rules/                  # 规则参考图
+├── AGENT_GUIDE.md              # Agent 教学工作流
+├── scripts/                    # 构建、QA、Release 打包
+└── .github/workflows/          # Pages / Release 自动化
 ```
 
-## 双语设计
+## Agent 使用
 
-仓库根目录始终以中文为默认语言。中文网页顶部可直接切换到英文，英文网页可一键返回中文；两套课程共用同一套交互引擎，但课程文本、术语解释、练习和番型说明分别本地化，而不是只翻译导航栏。
+如果你希望 ChatGPT、Claude、Codex 或其他 Agent 基于本项目教学，请直接使用 [`AGENT_GUIDE.md`](AGENT_GUIDE.md)。该指南要求 Agent 先 clone/下载仓库、核验 `VERSION`、读取正式教材和课程数据，再开始教学。
 
-英文版首次出现关键川麻术语时同时保留规范英文和拼音/中文名，例如Dingque（定缺）、Flower Pig / Huazhu（花猪）、Ready-hand Inspection / Cha Dajiao（查大叫），便于跨语言查阅资料。
+这样做的目的不是“让模型更听话”，而是保证教学依据来自**当前版本的项目文件**，避免把其他麻将变体、旧计分或模型自身记忆混入课程。
 
-## 质量控制
+## 开发
 
-发布前执行以下静态检查：
+用户学习课程不需要安装依赖；只有修改课程数据、重建教材或运行 QA 时才需要开发环境。
 
-- 34堂课程和45道练习的中英文数量一致；
-- 所有练习答案索引合法；
-- 每种具体牌最多4枚；
-- 13张/14张实验室只在固定定缺合法性通过后报告合法听口；
-- 花猪结算按每名收款人分别比较`max(64×,该玩家最大可胡倍数)`；
-- 龙七对、十八罗汉等复合牌型默认避免与“根”重复计数；
-- 中英文教材采用正式出版口吻，不保留对话过程性表述；
-- 全项目中文统一使用“**四川麻将（川麻）**”，英文统一使用“**Sichuan Mahjong (Chuan Mahjong)**”。
+```bash
+python -m pip install -r requirements-dev.txt
+python scripts/build.py
+python scripts/qa.py
+node --check assets/app.js
+```
 
-## Release
+构建 Release 资产：
 
-每个正式版本提供两个面向读者的离线包：
+```bash
+python scripts/package_release.py
+```
 
-- `Sichuan-Mahjong-Masterclass-zh-CN-vX.Y.Z.zip`：中文默认课程与教材；
-- `Sichuan-Mahjong-Masterclass-en-vX.Y.Z.zip`：英文课程与教材。
+当前前端使用原生 HTML/CSS/JavaScript，不依赖前端框架。麻将牌图形由 SVG 生成，学习进度保存在浏览器本地。
 
-仓库中的GitHub Actions工作流负责Pages部署，并在版本发布时生成/上传双语Release资产。当前课程版本：**v1.3.2**。仓库根目录另提供`standalone.html`作为便携双语单文件版。
+## Contributing
 
-## 数据与策略边界
+Bug、规则差异、翻译、可访问性和教学改进都欢迎提交。提交前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-本项目没有声称任何固定打法能够保证长期盈利。四川麻将是随机性显著的多人不完全信息博弈；即便决策质量提高，短期结果仍可能大幅波动。对手行为的精确概率若没有真实样本支持，应表示为区间、方向性证据或条件假设，而不是伪造到小数点后的“点炮率”。
+如果是规则或结算问题，Issue 中最好包含游戏/房间版本、完整手牌或行动时间轴、已公开牌、预期结果、实际结果，以及可公开核验的来源。策略讨论请区分“可证明结论”“条件模型”和“需要数据验证的经验假设”。
 
-本项目不包含自动下注、代打或保证收益功能。
+## License
 
-## 参考与致谢
+本项目的原创代码、教材文本、课程结构和练习以 [MIT License](LICENSE) 开源。
 
-规则主线以当前游戏内规则页与番型表为准。腾讯《欢乐麻将》2016川麻赛事规则用于交叉核对108张、血战结构、查叫/退税等历史公开机制，但赛事番型和处罚与当前规则并不完全相同，因此不混用其计分。
+`assets/rules/` 中的第三方规则截图及其他明确标注的第三方材料仍归各自权利人所有，不因本仓库采用 MIT License 而被重新授权。
 
-- 腾讯《欢乐麻将》2016川麻赛事规则：<https://majiang.qq.com/webplat/info/news_version3/7207/25932/25972/m16557/201611/523252.shtml>
+## Credits
 
-规则截图和第三方资料的著作权归各自权利人。本仓库中的课程结构、解释、代码和练习由项目维护者整理。
+项目由 [@jyu-zhou](https://github.com/jyu-zhou) 发起并维护。
 
-## 贡献
+规则主线以当前游戏内规则页和番型表为准；腾讯《欢乐麻将》2016 川麻赛事规则仅用于交叉核对部分历史公开机制，不用于覆盖当前项目中已经明确的计分规则。
 
-发现规则差异、牌例错误或翻译问题时，建议提交Issue，并尽量附上：规则版本/房间配置、完整手牌或时间轴、预期结算、实际结算以及可复现步骤。策略类讨论请区分“可证明结构结论”“条件模型”和“需要真实数据验证的经验假设”。
-
-## 许可
-
-当前仓库尚未声明开源许可证。除非后续添加`LICENSE`文件，否则请不要假设代码或教材已经授予再分发、商用或衍生许可。
+- [腾讯《欢乐麻将》2016 川麻赛事规则](https://majiang.qq.com/webplat/info/news_version3/7207/25932/25972/m16557/201611/523252.shtml)
