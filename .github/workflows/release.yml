@@ -1,0 +1,35 @@
+name: Publish bilingual release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - VERSION
+      - RELEASE_NOTES.md
+      - release/**
+      - .github/workflows/release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="v$(cat VERSION)"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" release/*.zip release/SHA256SUMS.txt --clobber
+          else
+            gh release create "$TAG" \
+              --target "$GITHUB_SHA" \
+              --title "四川麻将大师学院 / Sichuan Mahjong Masterclass $TAG" \
+              --notes-file RELEASE_NOTES.md \
+              release/*.zip release/SHA256SUMS.txt
+          fi
