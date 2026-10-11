@@ -12,7 +12,7 @@
 [![Content: CC BY 4.0](https://img.shields.io/badge/content-CC%20BY%204.0-a87839?style=flat-square)](LICENSE-CONTENT)
 [![Lessons](https://img.shields.io/badge/lessons-34-405852?style=flat-square)](#course-map)
 
-[中文](README.md) · [Chinese Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/) · [English Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [Releases](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
+[中文](README.md) · [English Course](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/) · [Full Textbook](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/textbook.html) · [Offline Single File](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest/download/standalone.html) · [Releases](https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest)
 
 </div>
 
@@ -26,8 +26,8 @@ The main course uses the rules contract currently locked by this project: four p
 
 <table>
 <tr><td align="right"><b>Learn online</b></td><td><a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/">中文</a> · <a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/">English</a></td></tr>
-<tr><td align="right"><b>Take it offline</b></td><td><a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest">Release downloads</a> · <a href="standalone.html">single-file HTML in the repo</a></td></tr>
-<tr><td align="right"><b>Read the textbook</b></td><td><a href="docs/en/textbook.md">English Markdown</a> · <a href="en/textbook.html">browser textbook</a> · <a href="docs/zh-CN/textbook.md">中文教材</a></td></tr>
+<tr><td align="right"><b>Take it offline</b></td><td><a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest/download/standalone.html">download the standalone HTML</a> · <a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases/latest">all Release assets</a></td></tr>
+<tr><td align="right"><b>Read the textbook</b></td><td><a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/textbook.html">English online textbook</a> · <a href="https://jyu-zhou.github.io/sichuan-mahjong-masterclass/textbook.html">中文在线教材</a> · <a href="docs/en/textbook.md">English Markdown source</a></td></tr>
 <tr><td align="right"><b>Learn with AI</b></td><td><a href="#teach-with-an-aiagent">copy the Quick Start Prompt</a> · <a href="AGENT_GUIDE.en.md">full Agent Guide</a></td></tr>
 <tr><td align="right"><b>Practice</b></td><td>Hand Lab · fan catalogue · probability/score tools · 45 interactive questions · reading timeline</td></tr>
 <tr><td align="right"><b>Contribute</b></td><td><a href="CONTRIBUTING.en.md">contributing guide</a> · <a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/issues">Issues</a> · <a href="https://github.com/jyu-zhou/sichuan-mahjong-masterclass/releases">Releases</a></td></tr>
@@ -63,7 +63,7 @@ New to Chuan Mahjong? Read in order. Already play regularly? Jump to the stage y
 
 - **First course:** follow the online lessons in order and answer each checkpoint before moving on.
 - **Already know the rules:** spend more time in Hand Lab, discard comparison, probability exercises, and the continuous-reading timeline.
-- **Researching strategy:** use the Markdown textbook and keep every probability claim tied to its stated sample space/model.
+- **Researching strategy:** start with the [full online textbook](https://jyu-zhou.github.io/sichuan-mahjong-masterclass/en/textbook.html); use the [Markdown source](docs/en/textbook.md) when you need citations, diffs, or source-level review. Keep every probability claim tied to its stated sample space/model.
 - **Need an offline copy:** the Release `standalone.html` is a complete bilingual single file; open it directly in a modern browser.
 - **Want an AI tutor:** use the prompt below or the full [Agent Guide](AGENT_GUIDE.en.md). The Agent should read the repository before it teaches.
 
