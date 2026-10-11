@@ -40,3 +40,10 @@ Before submitting, verify that the default Chinese entry, English entry, both te
 ## Naming and editorial style
 
 Chinese uses **四川麻将（川麻）**; English uses **Sichuan Mahjong (Chuan Mahjong)**. Published copy should read as standalone documentation and must not refer to chat history, upload history, or a specific questioner.
+
+
+## Contribution licensing
+
+Code contributions are accepted under the project's [MIT License](LICENSE-CODE). Contributions to textbook prose, lesson structure, exercises, translations, Agent documentation, and other educational content are accepted under [CC BY 4.0](LICENSE-CONTENT).
+
+Do not submit third-party screenshots, images, or prose as project-original material unless you have the right to relicense them. Rule-reference material should keep its source and rights boundary explicit.

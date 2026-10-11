@@ -30,7 +30,7 @@ if [x[1] for x in zh['fans']] != [x[1] for x in en['fans']]:
 
 required = [
     'index.html', 'en/index.html', 'textbook.html', 'en/textbook.html',
-    'README.md', 'README.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md', 'standalone.html', 'LICENSE', 'assets/logo.svg', 'CONTRIBUTING.md', 'CONTRIBUTING.en.md',
+    'README.md', 'README.en.md', 'AGENT_GUIDE.md', 'AGENT_GUIDE.en.md', 'standalone.html', 'LICENSE', 'LICENSE-CODE', 'LICENSE-CONTENT', 'assets/logo-main.png', 'assets/logo-hd.png', 'assets/favicon.png', 'CONTRIBUTING.md', 'CONTRIBUTING.en.md',
     'docs/zh-CN/textbook.md', 'docs/en/textbook.md',
 ]
 for path in required:
@@ -76,4 +76,4 @@ for path in [ROOT/'index.html', ROOT/'en/index.html', ROOT/'textbook.html', ROOT
 if errors:
     print('\n'.join('ERROR: ' + item for item in errors))
     sys.exit(1)
-print('QA passed: bilingual content, naming, links, counts, Agent guides, standalone edition, author/project credit, and publication wording are consistent.')
+print('QA passed: bilingual content, naming, links, counts, Agent guides, standalone edition, licensing, branding, author/project credit, and publication wording are consistent.')
